@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -18,8 +18,6 @@ export class LoginComponent {
     });
   }
 
-  
-
   onSubmit() {
     if (this.loginForm.invalid) {
       return;
@@ -31,10 +29,10 @@ export class LoginComponent {
       const email = this.loginForm.value.email;
       const password = this.loginForm.value.password;
 
-      // Here you should implement your own logic to check if the email and password are valid and registered.
+      // Here goes the logic to check if the email and password are valid and registered.
       // For this example, let's assume a valid email/password combination.
       if (email === 'user@example.com' && password === 'password') {
-        // Redirect to the Home page after successful login (you need to import Router and set it up in your app)
+        // Redirect to the Home page after successful login (needs to import Router and set it up in the app)
         // this.router.navigate(['/home']);
         alert('Logged in successfully!');
       } else {
@@ -45,7 +43,7 @@ export class LoginComponent {
   }
 
   onCreateAccount() {
-    // Implement logic to navigate to the Pedagogue registration form (you need to import Router and set it up in your app)
+    // Needs logic to navigate to the Pedagogue registration form (needs to import Router and set it up in your app)
     // this.router.navigate(['/pedagogue-registration']);
     alert('Create Account clicked');
   }
