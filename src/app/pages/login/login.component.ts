@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
+import { Pedagogue } from 'src/app/shared/models/IPedagogue';
 
 @Component({
   selector: 'lab-login',
@@ -7,11 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  loading = false;
-  error = '';
 
-  constructor(private formBuilder: FormBuilder) {
+  error = ''
+  loginForm: FormGroup;
+  users: Pedagogue[] = []
+
+  constructor(private formBuilder: FormBuilder, private service: LoginService) {
     this.loginForm = this.formBuilder.group({
       'email': ['', [Validators.required, Validators.email]],
       'password': ['', Validators.required]
@@ -19,32 +22,27 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if (this.loginForm.invalid) {
-      return;
-    }
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
 
-    // Simulate API call to validate credentials
-    this.loading = true;
-    setTimeout(() => {
-      const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
+    this.service.getLogin()
+      .subscribe((users) => {
+        this.users = users
 
-      // Here goes the logic to check if the email and password are valid and registered.
-      // For this example, let's assume a valid email/password combination.
-      if (email === 'user@example.com' && password === 'password') {
-        // Redirect to the Home page after successful login (needs to import Router and set it up in the app)
-        // this.router.navigate(['/home']);
-        alert('Logged in successfully!');
-      } else {
-        this.error = 'Invalid email or password';
-      }
-      this.loading = false;
-    }, 1500); // Simulating a delay for API response
+        for (let user of this.users) {
+          if (email === user.email && password === user.password) {
+            alert('Logged in successfully!')
+            break
+          }
+          else {
+            this.error = 'Invalid email or password';
+          }
+
+        }
+      })
   }
 
   onCreateAccount() {
-    // Needs logic to navigate to the Pedagogue registration form (needs to import Router and set it up in your app)
-    // this.router.navigate(['/pedagogue-registration']);
     alert('Create Account clicked');
   }
 }
