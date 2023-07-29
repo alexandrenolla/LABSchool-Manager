@@ -1,5 +1,6 @@
-export interface Pedagogue {
-    name: string;
+export interface Pedagogo {
+    nome: string;
     email: string;
-    password: string;
+    senha: string;
+    id?: number
 }

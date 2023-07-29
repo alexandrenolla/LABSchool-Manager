@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pedagogue } from '../shared/models/IPedagogue';
+import { Pedagogo } from '../models/IPedagogue';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,6 @@ export class LoginService {
   constructor(private HttpClient: HttpClient) {}
 
   getLogin() {
-    return this.HttpClient.get<Pedagogue[]>(this.url)
+    return this.HttpClient.get<Pedagogo[]>(this.url)
   }
 }

@@ -9,7 +9,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterUserComponent {
+export class RegisterComponent {
 
   cadastroForm: FormGroup
 
@@ -19,7 +19,7 @@ export class RegisterUserComponent {
 
       "cel": new FormControl('', [Validators.required, Validators.pattern('^[0-9]{11}$')]),
 
-      "nasc": new FormControl('', [Validators.required, this.ValidaNasc()]),
+      "nasc": new FormControl('', Validators.required),
 
       "cpf": new FormControl('', [Validators.required, Validators.pattern('^[0-9]{11}$')]),
 
@@ -47,35 +47,6 @@ export class RegisterUserComponent {
     }
   }
 
-  ValidaNasc(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      if (this.cadastroForm == null) {
-        return null
-      }
-      const dataAtual = new Date()
-      const anoAtual = dataAtual.getFullYear()
-      const mesAtual = dataAtual.getMonth() + 1
-      const diaAtual = dataAtual.getDate()
-
-      const nasc = this.cadastroForm.get('nasc')?.value
-      const anoNasc = parseInt(nasc.slice(0, 4))
-      const mesNasc = parseInt(nasc.slice(5, 7))
-      const diaNasc = parseInt(nasc.slice(8, 10))
-
-      if (anoNasc > anoAtual) {
-        return { 'ErroNasc': true }
-      }
-      else if (anoNasc === anoAtual) {
-        if (mesNasc > mesAtual) {
-          return { 'ErroNasc': true }
-        }
-        else if (mesNasc === mesAtual && diaNasc >= diaAtual) {
-          return { 'ErroNasc': true }
-        }
-      }
-    return null
-    }
-  }
 
   ErroMsg(campo: string) {
     return this.cadastroForm.get(campo)?.value.length === 0 && this.cadastroForm.get(campo)?.touched
@@ -89,11 +60,10 @@ export class RegisterUserComponent {
     return this.cadastroForm.get('confirmaPass')?.value.length > 0 && this.cadastroForm.get('confirmaPass')?.errors && this.cadastroForm.get('confirmaPass')?.hasError('ErroConfirmaPass')
   }
 
-  ErroNasc() {
-    return this.cadastroForm.get('nasc')?.value.length > 0 && this.cadastroForm.get('nasc')?.errors && this.cadastroForm.get('nasc')?.hasError('ErroNasc')
-  }
-
   cadastrar() {
+    if (this.cadastroForm.invalid){
+      console.log(this.cadastroForm.errors)
+    }
     const nome = this.cadastroForm.get('nome')?.value 
     const cel = this.cadastroForm.get('cel')?.value 
     let nasc = this.cadastroForm.get('nasc')?.value 
@@ -103,16 +73,13 @@ export class RegisterUserComponent {
 
     nasc = this.datePipe.transform(nasc, 'dd/MM/yyyy')
     
-    const postData = {
-      "name": nome,
-      "phone": cel,
-      "dateBirth": nasc,
-      "cpf": cpf,
+    const data = {
+      "nome": nome,
       "email": email,
       "senha": senha 
     }
 
-    this.registerService.postTeacher(postData)
+    this.registerService.criarPedagogo(data)
     .subscribe((result) => {
       console.log(result)
       alert("Cadastro bem sucedido.")

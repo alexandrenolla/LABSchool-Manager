@@ -16,7 +16,7 @@
               <div class="form-floating mb-3">
                   <input type="tel" name="cel" id="cel" class="form-control"
                       formControlName="cel" mask="(00) 00000-0000">
-                  <label for="cel">Phone</label>
+                  <label for="cel">Celular</label>
                   <span *ngIf="ErroMsg('cel')">
                       Campo obrigatório
                   </span>
@@ -26,12 +26,10 @@
               <div class="form-floating mb-3">
                   <input type="date" name="nasc" id="nasc" class="form-control" formControlName="nasc">
                   <label for="nasc">Data de nascimento</label>
-                  <span *ngIf="MsgErro('nasc')">
+                  <span *ngIf="ErroMsg('nasc')">
                       Campo obrigatório
                   </span>
-                  <span *ngIf="ErroNasc()">
-                      Campo obrigatório
-                  </span>
+                  
               </div>
           </div>
       </div>
@@ -55,7 +53,7 @@
                   <input type="password" name="password" id="password" class="form-control"
                       formControlName="pass">
                   <label for="password">Senha</label>
-                  <span *ngIf="validateErrorMessage('pass')">
+                  <span *ngIf="ErroMsg('pass')">
                       Campo obrigatório
                   </span>
                   <span *ngIf="ErroPass('pass')">
@@ -68,20 +66,20 @@
                   <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
                       formControlName="confirmaPass">
                   <label for="confirmPassword">Confirmar senha</label>
-                  <span *ngIf="ErroConfirmaPass('confirmaPass')">
+                  <span *ngIf="ErroMsg('confirmaPass')">
                     Campo obrigatório
                   </span>
                   <span *ngIf="ErroPass('confirmaPass')">
                     Senha deve ter 8 dígitos
                   </span>
-                  <span *ngIf="validateConfirmPasswordErrorMessage()">
+                  <span *ngIf="ErroConfirmaPass()">
                       Senhas não batem
                   </span>
               </div>
           </div>
       </div>
       <div class="d-grid gap-2 col-12 mx-auto">
-          <button type="submit" class="btn btn-primary" style=" background-color: #11b039; color: black;" [disabled]="this.cadastroForm.invalid">Cadastrar</button>
+          <button type="submit" class="btn btn-primary" style=" background-color: #11b039; color: black;">Cadastrar</button>
       </div>
   </form>
 </div>
