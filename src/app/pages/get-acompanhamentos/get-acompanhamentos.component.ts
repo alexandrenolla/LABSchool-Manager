@@ -40,7 +40,7 @@ export class GetAcompanhamentosComponent {
     this.route.navigate(['/register-acompanhamento'])
   }
 
-  IrEditar(id: number | undefined) {
-    this.route.navigate([`edit-monitoring/${id}`])
+  irParaEditar(id: number | undefined) {
+    this.route.navigate([`update-monitoring/${id}`])
   }
 }

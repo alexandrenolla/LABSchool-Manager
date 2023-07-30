@@ -14,6 +14,7 @@ import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.co
 import { RegisterEstudanteComponent } from './pages/register-estudante/register-estudante.component';
 import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-acompanhamentos.component';
 import { RegisterAcompanhamentoComponent } from './pages/register-acompanhamento/register-acompanhamento.component';
+import { UpdateAcompanhamentoComponent } from './pages/update-acompanhamento/update-acompanhamento.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterAcompanhamentoComponent } from './pages/register-acompanhamento
     GetEstudantesComponent,
     RegisterEstudanteComponent,
     GetAcompanhamentosComponent,
-    RegisterAcompanhamentoComponent
+    RegisterAcompanhamentoComponent,
+    UpdateAcompanhamentoComponent
   ],
   imports: [
     BrowserModule,
