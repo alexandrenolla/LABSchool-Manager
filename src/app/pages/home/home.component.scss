@@ -5,8 +5,12 @@
     box-shadow: 0px 5px 15px 10px rgba(0,0,0,0.1);
 }
 
-table, thead, tr {
+table {
     font-size: x-large;
     box-shadow: 0px 10px 15px 15px rgba(0,0,0,0.1);
+    border: 1px solid black;
+}
 
+thead, tr {
+    border: 1px solid black;
 }

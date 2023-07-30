@@ -23,6 +23,10 @@ export class GetEstudantesComponent implements OnInit {
       this.ListaEstudantes = [...result]
     })
   }
+  
+  IrCadastro(){
+    this.router.navigate(['/registro-estudante'])
+  }
 
   procurar(){
     if(this.pesquisa){
@@ -35,9 +39,5 @@ export class GetEstudantesComponent implements OnInit {
     else if (this.pesquisa === ''){
       this.ListaEstudantes2 = [...this.ListaEstudantes];
     }
-  }
-  
-  IrCadastro(){
-    this.router.navigate(['/registro-estudante'])
   }
 }

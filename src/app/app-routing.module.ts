@@ -11,10 +11,13 @@ import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-aco
 import { RegisterAcompanhamentoComponent } from './pages/register-acompanhamento/register-acompanhamento.component';
 import { UpdateAcompanhamentoComponent } from './pages/update-acompanhamento/update-acompanhamento.component';
 import { RotaErradaComponent } from './pages/rota-errada/rota-errada.component';
+import { ErroComponent } from './pages/erro/erro.component';
+import { acessoPrivado, acessoPublico } from './guards/guards.guard';
 
 const routes: Routes = [
   {
     path: '', component: PublicoComponent,
+    canActivate: [acessoPublico],
     children: [
       { path: '', redirectTo: 'login', pathMatch: "full" },
       { path: 'login', component: LoginComponent },
@@ -22,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: '', component: PrivadoComponent,
+    canActivate: [acessoPrivado],
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'registro-estudante', component: RegisterEstudanteComponent },
@@ -30,6 +34,7 @@ const routes: Routes = [
       { path: 'registro-acompanhamento', component: RegisterAcompanhamentoComponent },
       { path: 'atualizar-acompanhamento/:id', component: UpdateAcompanhamentoComponent }]
   },
+  { path: 'erro', component: ErroComponent},
   { path: '**', component: RotaErradaComponent}];
 
 @NgModule({

@@ -18,6 +18,7 @@ import { UpdateAcompanhamentoComponent } from './pages/update-acompanhamento/upd
 import { PublicoComponent } from './shared/layouts/publico/publico.component';
 import { PrivadoComponent } from './shared/layouts/privado/privado.component';
 import { RotaErradaComponent } from './pages/rota-errada/rota-errada.component';
+import { ErroComponent } from './pages/erro/erro.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RotaErradaComponent } from './pages/rota-errada/rota-errada.component';
     UpdateAcompanhamentoComponent,
     PublicoComponent,
     PrivadoComponent,
-    RotaErradaComponent
+    RotaErradaComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,14 @@ export class GetAcompanhamentosComponent {
     })
   }
 
+  irParaEditar(id: number | undefined) {
+    this.route.navigate([`atualizar-acompanhamento/${id}`])
+  }
+  
+  IrCadastrar() {
+    this.route.navigate(['/registro-acompanhamento'])
+  }
+
   procurar() {
     if (this.pesquisa) {
       this.listaAcompanhamentos2 = this.listaAcompanhamentos.filter(monitoring => monitoring.titulo.toLowerCase().includes(this.pesquisa.toLowerCase()))
@@ -34,13 +42,5 @@ export class GetAcompanhamentosComponent {
     else if (this.pesquisa === '') {
       this.listaAcompanhamentos2 = this.listaAcompanhamentos
     }
-  }
-
-  IrCadastrar() {
-    this.route.navigate(['/registro-acompanhamento'])
-  }
-
-  irParaEditar(id: number | undefined) {
-    this.route.navigate([`atualizar-acompanhamento/${id}`])
   }
 }

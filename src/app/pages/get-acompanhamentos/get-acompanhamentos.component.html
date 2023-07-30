@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="row mb-5">
         <div class="d-grid gap-2 col-12 mx-auto mb-3">
             <form class="d-flex" role="search">
@@ -13,27 +12,21 @@
             </form>
         </div>
         <div id="botaoCadastrar" class="d-grid gap-2 col-12 mx-auto">
-            <button id="cadastrar" class="btn btn-success" (click)="IrCadastrar()">Cadastrar</button>
+            <button id="cadastrar" class="btn btn-success" (click)="IrCadastrar()">Cadastrar novo acompanhamento</button>
         </div>
     </div>
-
     <div id="rowCards" class="row">
         <div *ngFor="let acompanhamento of listaAcompanhamentos2" class="col col-xl-4 col-xxl-3">
-
             <div class="card" >
                 <div class="card-header cards-header">
                     {{acompanhamento.titulo}}
                 </div>
-
                 <ul class="list-group list-group-flush cards">
-                    <li class="list-group-item">Estudante: {{acompanhamento.estudante}}</li>
-
                     <li class="list-group-item">Pedagogo: {{acompanhamento.pedagogo}}</li>
-
+                    <li class="list-group-item">Estudante: {{acompanhamento.estudante}}</li>
+                    <li class="list-group-item">Descrição: {{acompanhamento.descricao}}</li>
                     <li class="list-group-item">Data: {{acompanhamento.data}}</li>
                     <li id="link" class="list-group-item" (click)="irParaEditar(acompanhamento.id)">Editar acompanhamento</li>
-
-
                 </ul>
             </div>
         </div>

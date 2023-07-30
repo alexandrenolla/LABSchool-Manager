@@ -56,35 +56,6 @@ export class RegisterAcompanhamentoComponent {
     })
   }
 
-  MsgErro(campo: string) {
-    return (this.cadastrarForm.get(campo)?.value === null || this.cadastrarForm.get(campo)?.value.length === 0) && this.cadastrarForm.get(campo)?.touched
-  }
-
-  MsgErroSelect(campo: string) {
-    return (this.cadastrarForm.get(campo)?.value === '' || this.cadastrarForm.get(campo)?.value === 'Select') && this.cadastrarForm.get(campo)?.touched
-  }
-
-  FormatarData(data: string): string {
-    const parts = data.split('/')
-    if (parts.length === 3) {
-      return `${parts[2]}-${parts[1]}-${parts[0]}`
-    } 
-    else {
-      return data;
-    }
-  }
-
-  FormatarDataAtual() {
-    const dataAtual = new Date()
-    const diaAtual = dataAtual.getDate()
-    const anoAtual = dataAtual.getFullYear()
-    let mesAtual: string | number = dataAtual.getMonth() + 1
-    if (mesAtual < 10) {
-      mesAtual = `0${mesAtual}`
-    }
-    return `${anoAtual}-${mesAtual}-${diaAtual}`
-  }
-
   enviarDados() {
 
     const estudante = this.cadastrarForm.get('nomeEstudante')?.value
@@ -109,5 +80,34 @@ export class RegisterAcompanhamentoComponent {
       alert("Acompanhamento pedagógico criado com sucesso!")
       this.route.navigate(['acompanhamentos'])
     })
+  }
+
+  FormatarData(data: string): string {
+    const parts = data.split('/')
+    if (parts.length === 3) {
+      return `${parts[2]}-${parts[1]}-${parts[0]}`
+    } 
+    else {
+      return data;
+    }
+  }
+
+  MsgErro(campo: string) {
+    return (this.cadastrarForm.get(campo)?.value === null || this.cadastrarForm.get(campo)?.value.length === 0) && this.cadastrarForm.get(campo)?.touched
+  }
+
+  MsgErroSelect(campo: string) {
+    return (this.cadastrarForm.get(campo)?.value === '' || this.cadastrarForm.get(campo)?.value === 'Select') && this.cadastrarForm.get(campo)?.touched
+  }
+
+  FormatarDataAtual() {
+    const dataAtual = new Date()
+    const diaAtual = dataAtual.getDate()
+    const anoAtual = dataAtual.getFullYear()
+    let mesAtual: string | number = dataAtual.getMonth() + 1
+    if (mesAtual < 10) {
+      mesAtual = `0${mesAtual}`
+    }
+    return `${anoAtual}-${mesAtual}-${diaAtual}`
   }
 }

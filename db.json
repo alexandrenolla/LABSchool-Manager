@@ -34,7 +34,7 @@
   "acompanhamentos": [
     {
       "estudante": "Alexandre",
-      "pedagogo": "PEDAGOGO01",
+      "pedagogo": "Carol",
       "titulo": "Notas baixas",
       "data": "10-10-2010",
       "descricao": "TDAH Crônico",
@@ -43,8 +43,8 @@
     },
     {
       "estudante": "Maria",
-      "pedagogo": "PEDAGOGO02",
-      "titulo": "Compulsao",
+      "pedagogo": "Alexandre",
+      "titulo": "Compulsão",
       "data": "01-07-2023",
       "descricao": "Excesso de estudos",
       "finalizado": false,
@@ -52,7 +52,7 @@
     },
     {
       "estudante": "Rodrigo",
-      "pedagogo": "PEDAGOGO01",
+      "pedagogo": "Carol",
       "titulo": "Matemática",
       "data": "01-07-2020",
       "descricao": "Viciado em humanas",
@@ -62,9 +62,9 @@
     {
       "estudante": "Joana",
       "pedagogo": "Eduarda",
-      "titulo": "frances",
+      "titulo": "Francês",
       "data": "30/07/2023",
-      "descricao": "reforço",
+      "descricao": "Reforço",
       "finalizado": true,
       "id": 4
     }

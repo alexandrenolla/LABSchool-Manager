@@ -31,35 +31,6 @@ export class RegisterComponent {
     })
   }
 
-  ValidaPassConf(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      if (this.cadastroForm == null) {
-        return null
-      }
-      const senha = this.cadastroForm.get('pass')?.value
-      const confirmaPass = this.cadastroForm.get('confirmaPass')?.value
-      if (senha != confirmaPass) {
-        return { 'ErroConfirmaPass': true }
-      }
-      else {
-        return null
-      }
-    }
-  }
-
-
-  ErroMsg(campo: string) {
-    return this.cadastroForm.get(campo)?.value.length === 0 && this.cadastroForm.get(campo)?.touched
-  }
-
-  ErroPass(campo: string) {
-    return this.cadastroForm.get(campo)?.value.length > 0 && this.cadastroForm.get(campo)?.value.length < 8 && this.cadastroForm.get(campo)?.touched
-  }
-
-  ErroConfirmaPass() {
-    return this.cadastroForm.get('confirmaPass')?.value.length > 0 && this.cadastroForm.get('confirmaPass')?.errors && this.cadastroForm.get('confirmaPass')?.hasError('ErroConfirmaPass')
-  }
-
   cadastrar() {
     if (this.cadastroForm.invalid){
       console.log(this.cadastroForm.errors)
@@ -85,5 +56,33 @@ export class RegisterComponent {
       alert("Cadastro bem sucedido.")
       this.router.navigate(['/login'])
     })
+  }
+
+  ErroPass(campo: string) {
+    return this.cadastroForm.get(campo)?.value.length > 0 && this.cadastroForm.get(campo)?.value.length < 8 && this.cadastroForm.get(campo)?.touched
+  }
+
+  ErroConfirmaPass() {
+    return this.cadastroForm.get('confirmaPass')?.value.length > 0 && this.cadastroForm.get('confirmaPass')?.errors && this.cadastroForm.get('confirmaPass')?.hasError('ErroConfirmaPass')
+  }
+
+  ErroMsg(campo: string) {
+    return this.cadastroForm.get(campo)?.value.length === 0 && this.cadastroForm.get(campo)?.touched
+  }
+
+  ValidaPassConf(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (this.cadastroForm == null) {
+        return null
+      }
+      const senha = this.cadastroForm.get('pass')?.value
+      const confirmaPass = this.cadastroForm.get('confirmaPass')?.value
+      if (senha != confirmaPass) {
+        return { 'ErroConfirmaPass': true }
+      }
+      else {
+        return null
+      }
+    }
   }
 }

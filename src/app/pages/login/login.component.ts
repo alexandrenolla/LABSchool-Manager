@@ -23,6 +23,14 @@ export class LoginComponent {
     });
   }
 
+  ngOnInit() {
+    let verificaLogin = this.service.verificaLogin()
+  }
+
+  criarConta() {
+    this.rota.navigate(['/registro'])
+  }
+
   onSubmit() {
     const email = this.loginForm.value.email;
     const senha = this.loginForm.value.password;
@@ -33,8 +41,8 @@ export class LoginComponent {
 
         for (let usuario of this.usuarios) {
           if (email === usuario.email && senha === usuario.senha) {
-            alert('Logado!')
             this.loginEstado = true
+            localStorage.setItem("logado", "true")
             this.rota.navigate(['home'])
             break
           }
@@ -45,9 +53,5 @@ export class LoginComponent {
 
 
       })
-  }
-
-  criarConta() {
-    this.rota.navigate(['/registro'])
   }
 }

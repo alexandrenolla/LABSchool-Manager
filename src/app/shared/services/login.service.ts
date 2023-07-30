@@ -12,4 +12,17 @@ export class LoginService {
   getLogin() {
     return this.HttpClient.get<Pedagogo[]>(this.url)
   }
+
+  verificaLogin(){
+    let logado = localStorage.getItem("logado")
+    if (logado === null){
+      logado = "false"
+      return false
+    }
+    else{
+      return true
+    }
+
+
+  }
 }

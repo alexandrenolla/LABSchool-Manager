@@ -27,6 +27,39 @@ export class RegisterEstudanteComponent {
     })
   }
 
+  cadastrar() {
+    const name = this.cadastrarForm.get('nome')?.value
+    const phone = this.cadastrarForm.get('cel')?.value
+    let nasc = this.cadastrarForm.get('nasc')?.value
+    const cpf = this.cadastrarForm.get('cpf')?.value
+    const grade = this.cadastrarForm.get('nota')?.value
+
+    nasc = this.datePipe.transform(nasc, 'dd/MM/yyyy')
+
+    const dados = {
+      "nome": name,
+      "cel": phone,
+      "nasc": nasc,
+      "cpf": cpf,
+      "nota": grade
+    }
+
+    this.registerService.criarEstudante(dados)
+      .subscribe((response) => {
+        console.log(response)
+        alert("Cadastrado.")
+        this.router.navigate(["estudantes"])
+      })
+  }
+
+  MsgErroNasc() {
+    return this.cadastrarForm.get('nasc')?.value.length > 0 && this.cadastrarForm.get('nasc')?.errors && this.cadastrarForm.get('nasc')?.hasError('nascInvalid')
+  }
+
+  MsgErro(field: string) {
+    return (this.cadastrarForm.get(field)?.value === null || this.cadastrarForm.get(field)?.value.length === 0) && this.cadastrarForm.get(field)?.touched
+  }
+
   nascValida(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (this.cadastrarForm == null) {
@@ -55,38 +88,5 @@ export class RegisterEstudanteComponent {
       }
       return null
     }
-  }
-
-  MsgErro(field: string) {
-    return (this.cadastrarForm.get(field)?.value === null || this.cadastrarForm.get(field)?.value.length === 0) && this.cadastrarForm.get(field)?.touched
-  }
-
-  MsgErroNasc() {
-    return this.cadastrarForm.get('nasc')?.value.length > 0 && this.cadastrarForm.get('nasc')?.errors && this.cadastrarForm.get('nasc')?.hasError('nascInvalid')
-  }
-
-  cadastrar() {
-    const name = this.cadastrarForm.get('nome')?.value
-    const phone = this.cadastrarForm.get('cel')?.value
-    let nasc = this.cadastrarForm.get('nasc')?.value
-    const cpf = this.cadastrarForm.get('cpf')?.value
-    const grade = this.cadastrarForm.get('nota')?.value
-
-    nasc = this.datePipe.transform(nasc, 'dd/MM/yyyy')
-
-    const dados = {
-      "nome": name,
-      "cel": phone,
-      "nasc": nasc,
-      "cpf": cpf,
-      "nota": grade
-    }
-
-    this.registerService.criarEstudante(dados)
-      .subscribe((response) => {
-        console.log(response)
-        alert("Cadastrado.")
-        this.router.navigate(["estudantes"])
-      })
   }
 }
