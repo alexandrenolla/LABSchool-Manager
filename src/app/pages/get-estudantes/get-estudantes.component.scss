@@ -1,0 +1,19 @@
+.cards-header {
+    font-size: x-large;
+    box-shadow: 0px 10px 15px 15px rgba(0,0,0,0.1);
+    background-color: rgb(249, 219, 182);
+}
+
+.cards-header:hover {
+    color: white;
+    border-radius: 20px;
+}
+.cards {
+    font-size: x-large;
+    box-shadow: 0px 10px 15px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+input, button {
+    font-size: x-large;
+}
