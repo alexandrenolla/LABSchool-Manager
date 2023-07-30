@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/shared/services/login.service';
-import { Pedagogo } from 'src/app/shared/models/IPedagogue';
+import { Pedagogo } from 'src/app/shared/models/IPedagogue.model';
 import { Router } from '@angular/router';
 
 @Component({

@@ -24,5 +24,50 @@
       "senha": "12345678",
       "id": 4
     }
+  ],
+  "acompanhamentos": [
+    {
+    "estudante": "Alexandre", 
+    "pedagogo": "PEDAGOGO01",
+    "titulo": "Notas baixas",
+    "data": "10-10-2010",
+    "descricao": "TDAH Crônico",
+    "finalizado": true,
+    "id": 1
+    },
+    {
+      "estudante": "Maria", 
+      "pedagogo": "PEDAGOGO02",
+      "titulo": "Compulsao",
+      "data": "01-07-2023",
+      "descricao": "Excesso de estudos",
+      "finalizado": false,
+      "id": 2
+    },
+    {
+      "estudante": "Rodrigo", 
+      "pedagogo": "PEDAGOGO01",
+      "titulo": "Matemática",
+      "data": "01-07-2020",
+      "descricao": "Viciado em humanas",
+      "finalizado": false,
+      "id": 3
+    }
+  ],
+  "estudantes": [
+    {
+      "nome": "Joana",
+      "cel": "(48)98805-0165",
+      "nasc": "14/10/1990",
+      "cpf": "051.931.499-95",
+      "nota": "10"
+    },
+    {
+      "nome": "Marcia",
+      "cel": "(48)98805-9999",
+      "nasc": "13/10/1960",
+      "cpf": "055.931.499-99",
+      "nota": "9.5"
+    }
   ]
 }
