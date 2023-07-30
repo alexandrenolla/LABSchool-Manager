@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.component';
 import { RegisterEstudanteComponent } from './pages/register-estudante/register-estudante.component';
 import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-acompanhamentos.component';
+import { RegisterAcompanhamentoComponent } from './pages/register-acompanhamento/register-acompanhamento.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-aco
     HomeComponent,
     GetEstudantesComponent,
     RegisterEstudanteComponent,
-    GetAcompanhamentosComponent
+    GetAcompanhamentosComponent,
+    RegisterAcompanhamentoComponent
   ],
   imports: [
     BrowserModule,

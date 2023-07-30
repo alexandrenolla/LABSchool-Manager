@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Pedagogo } from '../models/IPedagogue.model';
 import { HttpClient } from '@angular/common/http';
 import { Estudante } from '../models/IEstudante.model';
+import { Acompanhamentos } from '../models/IAcompanhamento.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class RegisterService {
 
   criarEstudante(data: Estudante) {
     return this.httpClient.post(`${this.url}estudantes`, data)
+  }
+
+  criarAcompanhamento(data: Acompanhamentos) {
+    return this.httpClient.post(`${this.url}acompanhamentos`, data)
   }
 }
