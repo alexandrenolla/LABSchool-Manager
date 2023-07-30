@@ -1,4 +1,11 @@
+
 # LABSchoolManager
+
+# Como rodar o projeto:
+
+1. Deve rodar o script do json-server no arquivo package.json
+2. Rodar o comando ng server --o no terminal
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 
