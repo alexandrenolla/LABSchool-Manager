@@ -3,7 +3,7 @@
 
 # Como rodar o projeto:
 
-1. Deve rodar o script do json-server no arquivo package.json
+1. Rodar o script do json-server no arquivo package.json
 2. Rodar o comando ng server --o no terminal
 
 
