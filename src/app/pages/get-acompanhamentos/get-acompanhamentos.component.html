@@ -31,7 +31,7 @@
                     <li class="list-group-item">Pedagogo: {{acompanhamento.pedagogo}}</li>
 
                     <li class="list-group-item">Data: {{acompanhamento.data}}</li>
-                    <li class="list-group-item"><a>Editar acompanhamento</a></li>
+                    <li id="link" class="list-group-item" (click)="irParaEditar(acompanhamento.id)">Editar acompanhamento</li>
 
 
                 </ul>
