@@ -12,6 +12,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './pages/home/home.component';
 import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.component';
 import { RegisterEstudanteComponent } from './pages/register-estudante/register-estudante.component';
+import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-acompanhamentos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterEstudanteComponent } from './pages/register-estudante/register-
     HeaderComponent,
     HomeComponent,
     GetEstudantesComponent,
-    RegisterEstudanteComponent
+    RegisterEstudanteComponent,
+    GetAcompanhamentosComponent
   ],
   imports: [
     BrowserModule,
