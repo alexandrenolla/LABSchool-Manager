@@ -38,6 +38,6 @@ export class GetEstudantesComponent implements OnInit {
   }
   
   IrCadastro(){
-    this.router.navigate(['/cadastrar-estudante'])
+    this.router.navigate(['/register-estudante'])
   }
 }

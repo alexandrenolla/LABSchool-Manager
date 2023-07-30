@@ -1,0 +1,59 @@
+<div class="container">
+
+    <h1 class="mb-3">Cadastrar Estudante</h1>
+    
+    <form [formGroup]="cadastrarForm" (ngSubmit)="cadastrar()">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="nome" id="nome" formControlName="nome">
+            <label for="nome">Nome</label>
+            <span *ngIf="MsgErro('nome')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="tel" name="cel" id="cel" class="form-control"
+                        formControlName="cel" mask="(00) 00000-0000">
+                    <label for="cel">Celular</label>
+                    <span *ngIf="MsgErro('cel')">
+                        Campo obrigatório
+                    </span>
+                </div>
+            </div>         
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="date" name="nasc" id="nasc" class="form-control" formControlName="nasc">
+                    <label for="nasc">Data de Nascimento</label>
+                    <span *ngIf="MsgErro('nasc')">
+                        Campo obrigatório
+                    </span>
+                    <span *ngIf="MsgErroNasc()">
+                        Data Inválida
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="cpf" id="cpf" class="form-control" formControlName="cpf"
+                mask="000.000.000-00">
+            <label for="cpf">CPF</label>
+            <span *ngIf="MsgErro('cpf')">
+                Campo obrigatório
+            </span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" name="nota" id="nota" class="form-control" formControlName="nota" min="0"
+                max="10">
+            <label for="grade">Nota</label>
+            <span *ngIf="MsgErro('nota')">
+                Campo obrigatório
+            </span>
+        </div>
+        <div class="d-grid gap-2 col-12 mx-auto">
+            <button type="submit" class="btn btn-success" [disabled]="this.cadastrarForm.invalid">Cadastrar</button>
+        </div>
+    </form>
+</div>

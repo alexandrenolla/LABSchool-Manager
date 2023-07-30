@@ -4,4 +4,5 @@ export interface Estudante {
     nasc: string,
     cpf: string,
     nota: number
+    id?: number
 }

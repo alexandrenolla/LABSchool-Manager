@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './pages/home/home.component';
 import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.component';
+import { RegisterEstudanteComponent } from './pages/register-estudante/register-estudante.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.co
     RegisterComponent,
     HeaderComponent,
     HomeComponent,
-    GetEstudantesComponent
+    GetEstudantesComponent,
+    RegisterEstudanteComponent
   ],
   imports: [
     BrowserModule,
