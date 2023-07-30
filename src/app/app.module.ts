@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './pages/home/home.component';
+import { GetEstudantesComponent } from './pages/get-estudantes/get-estudantes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    GetEstudantesComponent
   ],
   imports: [
     BrowserModule,
