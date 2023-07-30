@@ -1,25 +1,25 @@
 {
   "pedagogue": [
     {
-      "name": "Alexandre Nolla",
+      "name": "Alexandre",
       "email": "alexandre@email.com",
       "password": "12345",
       "id": 1
     },
     {
-      "name": "Maria Carolina",
+      "name": "Maria",
       "email": "maria@email.com",
       "password": "12345",
       "id": 2
     },
     {
-      "nome": "PEDAGOGO01",
+      "nome": "Carol",
       "email": "pedagogo01@gmail.com",
       "senha": "12345678",
       "id": 3
     },
     {
-      "nome": "PEDAGOGO02",
+      "nome": "Eduarda",
       "email": "pedagogo02@gmail.com",
       "senha": "12345678",
       "id": 4
@@ -52,6 +52,15 @@
       "descricao": "Viciado em humanas",
       "finalizado": false,
       "id": 3
+    },
+    {
+      "estudante": "Joana",
+      "pedagogo": "PEDAGOGO02",
+      "titulo": "Ingles",
+      "data": "30/07/2023",
+      "descricao": "dificuldade",
+      "finalizado": "",
+      "id": 4
     }
   ],
   "estudantes": [
