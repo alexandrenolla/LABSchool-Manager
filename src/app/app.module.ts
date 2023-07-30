@@ -15,6 +15,9 @@ import { RegisterEstudanteComponent } from './pages/register-estudante/register-
 import { GetAcompanhamentosComponent } from './pages/get-acompanhamentos/get-acompanhamentos.component';
 import { RegisterAcompanhamentoComponent } from './pages/register-acompanhamento/register-acompanhamento.component';
 import { UpdateAcompanhamentoComponent } from './pages/update-acompanhamento/update-acompanhamento.component';
+import { PublicoComponent } from './shared/layouts/publico/publico.component';
+import { PrivadoComponent } from './shared/layouts/privado/privado.component';
+import { RotaErradaComponent } from './pages/rota-errada/rota-errada.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { UpdateAcompanhamentoComponent } from './pages/update-acompanhamento/upd
     RegisterEstudanteComponent,
     GetAcompanhamentosComponent,
     RegisterAcompanhamentoComponent,
-    UpdateAcompanhamentoComponent
+    UpdateAcompanhamentoComponent,
+    PublicoComponent,
+    PrivadoComponent,
+    RotaErradaComponent
   ],
   imports: [
     BrowserModule,

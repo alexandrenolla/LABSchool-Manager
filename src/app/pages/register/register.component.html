@@ -3,16 +3,15 @@
   <h1 class="mb-3">Cadastro</h1>
 
   <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
-      <!-- NAME -->
       <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="name" id="name" formControlName="nome">
+          <input type="text" class="form-control" name="name" id="nome" formControlName="nome">
           <label for="name">Nome</label>
           <span *ngIf="ErroMsg('nome')">
               Campo obrigatório
           </span>
       </div>
-      <div class="row g-2">
-          <div class="col-md">
+      <div class="row">
+          <div class="col">
               <div class="form-floating mb-3">
                   <input type="tel" name="cel" id="cel" class="form-control"
                       formControlName="cel" mask="(00) 00000-0000">
@@ -22,16 +21,17 @@
                   </span>
               </div>
           </div>
-          <div class="col-md">
-              <div class="form-floating mb-3">
-                  <input type="date" name="nasc" id="nasc" class="form-control" formControlName="nasc">
-                  <label for="nasc">Data de nascimento</label>
-                  <span *ngIf="ErroMsg('nasc')">
-                      Campo obrigatório
-                  </span>
-                  
-              </div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="date" name="nasc" id="nasc" class="form-control" formControlName="nasc">
+                <label for="nasc">Data de nascimento</label>
+                <span *ngIf="ErroMsg('nasc')">
+                    Campo obrigatório
+                </span>
+            </div>
+        </div>
       </div>
       <div class="form-floating mb-3">
           <input type="text" name="cpf" id="cpf" class="form-control" formControlName="cpf" mask="000.000.000-00">
@@ -47,8 +47,8 @@
              Campo obrigatório
           </span>
       </div>
-      <div class="row g-2">
-          <div class="col-md">
+      <div class="row">
+          <div class="col">
               <div class="form-floating mb-3">
                   <input type="password" name="password" id="password" class="form-control"
                       formControlName="pass">
@@ -61,22 +61,24 @@
                   </span>
               </div>
           </div>
-          <div class="col-md">
-              <div class="form-floating mb-3">
-                  <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
-                      formControlName="confirmaPass">
-                  <label for="confirmPassword">Confirmar senha</label>
-                  <span *ngIf="ErroMsg('confirmaPass')">
-                    Campo obrigatório
-                  </span>
-                  <span *ngIf="ErroPass('confirmaPass')">
-                    Senha deve ter 8 dígitos
-                  </span>
-                  <span *ngIf="ErroConfirmaPass()">
-                      Senhas não batem
-                  </span>
-              </div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                    formControlName="confirmaPass">
+                <label for="confirmPassword">Confirmar senha</label>
+                <span *ngIf="ErroMsg('confirmaPass')">
+                  Campo obrigatório
+                </span>
+                <span *ngIf="ErroPass('confirmaPass')">
+                  Senha deve ter 8 dígitos
+                </span>
+                <span *ngIf="ErroConfirmaPass()">
+                    Senhas não batem
+                </span>
+            </div>
+        </div>
       </div>
       <div class="d-grid gap-2 col-12 mx-auto">
           <button type="submit" class="btn btn-primary" style=" background-color: #11b039; color: black;">Cadastrar</button>

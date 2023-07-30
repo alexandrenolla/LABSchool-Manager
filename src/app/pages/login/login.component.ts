@@ -35,6 +35,7 @@ export class LoginComponent {
           if (email === usuario.email && senha === usuario.senha) {
             alert('Logado!')
             this.loginEstado = true
+            this.rota.navigate(['home'])
             break
           }
         }
