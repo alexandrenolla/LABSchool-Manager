@@ -107,6 +107,7 @@ export class RegisterAcompanhamentoComponent {
 
     this.registerService.criarAcompanhamento(this.dados).subscribe((response) => {
       alert("Acompanhamento pedagógico criado com sucesso!")
+      this.route.navigate(['acompanhamentos'])
     })
   }
 }

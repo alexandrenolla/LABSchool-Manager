@@ -27,7 +27,6 @@ export class RegisterEstudanteComponent {
     })
   }
 
-  // VALIDATING THE BIRTH DATE
   nascValida(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (this.cadastrarForm == null) {
@@ -58,7 +57,6 @@ export class RegisterEstudanteComponent {
     }
   }
 
-  // ERRORS MESSAGES 
   MsgErro(field: string) {
     return (this.cadastrarForm.get(field)?.value === null || this.cadastrarForm.get(field)?.value.length === 0) && this.cadastrarForm.get(field)?.touched
   }
@@ -67,7 +65,6 @@ export class RegisterEstudanteComponent {
     return this.cadastrarForm.get('nasc')?.value.length > 0 && this.cadastrarForm.get('nasc')?.errors && this.cadastrarForm.get('nasc')?.hasError('nascInvalid')
   }
 
-  // METHOD TO POST NEW STUDENT AND REDIRECT TO LIST-STUDENTS
   cadastrar() {
     const name = this.cadastrarForm.get('nome')?.value
     const phone = this.cadastrarForm.get('cel')?.value
@@ -85,12 +82,11 @@ export class RegisterEstudanteComponent {
       "nota": grade
     }
 
-    
-
     this.registerService.criarEstudante(dados)
       .subscribe((response) => {
         console.log(response)
         alert("Cadastrado.")
+        this.router.navigate(["estudantes"])
       })
   }
 }

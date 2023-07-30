@@ -37,10 +37,10 @@ export class GetAcompanhamentosComponent {
   }
 
   IrCadastrar() {
-    this.route.navigate(['/register-acompanhamento'])
+    this.route.navigate(['/registro-acompanhamento'])
   }
 
   irParaEditar(id: number | undefined) {
-    this.route.navigate([`update-monitoring/${id}`])
+    this.route.navigate([`atualizar-acompanhamento/${id}`])
   }
 }

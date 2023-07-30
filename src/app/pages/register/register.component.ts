@@ -17,17 +17,17 @@ export class RegisterComponent {
     this.cadastroForm = new FormGroup({
       "nome": new FormControl('', Validators.required),
 
-      "cel": new FormControl('', [Validators.required, Validators.pattern('^[0-9]{11}$')]),
+      "cel": new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14)]),
 
       "nasc": new FormControl('', Validators.required),
 
-      "cpf": new FormControl('', [Validators.required, Validators.pattern('^[0-9]{11}$')]),
+      "cpf": new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14)]),
 
       "email": new FormControl('', [Validators.required, Validators.email]),
 
-      "pass": new FormControl('', [Validators.required, Validators.min(8)]),
+      "pass": new FormControl('', [Validators.required, Validators.minLength(9)]),
 
-      "confirmaPass": new FormControl('', [Validators.required, Validators.min(8), this.ValidaPassConf()]),
+      "confirmaPass": new FormControl('', [Validators.required, Validators.minLength(9), this.ValidaPassConf()]),
     })
   }
 

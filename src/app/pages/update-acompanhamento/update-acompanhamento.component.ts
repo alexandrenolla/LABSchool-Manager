@@ -114,6 +114,7 @@ export class UpdateAcompanhamentoComponent {
 
     this.updateService.updateAcompanhamento(this.acompanhamnto_id_number, this.dados).subscribe((response) => {
       alert("Acompanhamento pedagógico alterado com sucesso!")
+      this.route.navigate(['acompanhamentos'])
     })
   }
 }
