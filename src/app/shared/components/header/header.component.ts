@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'lab-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

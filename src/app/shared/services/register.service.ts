@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pedagogo } from '../models/IPedagogue';
+import { Pedagogo } from '../models/IPedagogue.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

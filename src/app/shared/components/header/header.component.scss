@@ -1,12 +1,19 @@
-.navbar {
-    margin-bottom: 20px;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-  }
-  
-  .navbar-nav .nav-link {
-    margin-right: 10px;
-  }
-  
+a {
+  color: black;
+}
+a:hover {
+  color: white;
+}
+#usuario {
+  font-style: italic;
+}
+li {
+  font-size: x-large;
+}
+header {
+  background-color: rgb(249, 219, 182);
+  box-shadow: 2px 26px 20px -13px rgba(0,0,0,0.1);
+}
+.container-fluid {
+  padding: 0px;
+}
