@@ -1,34 +1,22 @@
 {
   "pedagogue": [
     {
-      "name": "Alexandre",
-      "email": "alexandre@email.com",
-      "password": "12345",
+      "nome": "Alexandre Henrique Fernandes Nolla",
+      "email": "alexandre.nolla@gmail.com",
+      "senha": "wisedecisions",
       "id": 1
-    },
-    {
-      "name": "Maria",
-      "email": "maria@email.com",
-      "password": "12345",
-      "id": 2
     },
     {
       "nome": "Carol",
       "email": "pedagogo01@gmail.com",
       "senha": "12345678",
-      "id": 3
+      "id": 2
     },
     {
       "nome": "Eduarda",
       "email": "pedagogo02@gmail.com",
       "senha": "12345678",
-      "id": 4
-    },
-    {
-      "nome": "Alexandre Henrique Fernandes Nolla",
-      "email": "alexandre.nolla@gmail.com",
-      "senha": "wisedecisions",
-      "id": 5
+      "id": 3
     }
   ],
   "acompanhamentos": [
