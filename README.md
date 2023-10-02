@@ -4,6 +4,7 @@ Front-end for the educational management system, in which teachers and educators
 Functionalities: Registration and querying of students and/or educational sessions, as well as the editing of records. Validation of all form fields and user authentication through a login and password system.
 
 # How to run the project:
+0. You got to have Node installed.
 1. Run the command npm install on terminal
 2. Run the json-server script inside package.json file
 3. Run the command ng server --o on terminal
