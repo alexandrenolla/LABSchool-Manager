@@ -7,7 +7,7 @@ Functionalities: Registration and querying of students and/or educational sessio
 
 First, install 'Node.js' on your computer.
 Once installed, open the project in your editor and run the command 'npm install' in your terminal. This will install all the necessary dependencies for the project to run.
-Next, still in your terminal, enter the command 'ng serve'.
+Next, still in your terminal, enter the command 'npm run start' and access the port suggested in your terminal.
 Within the project files, access 'package.json', go to 'scripts', hover over 'server', and click on the 'Run script' option that appears.
 Then, navigate to: 'http://localhost:4200/'.
 
