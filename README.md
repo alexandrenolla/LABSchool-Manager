@@ -8,9 +8,7 @@ Functionalities: Registration and querying of students and/or educational sessio
 1. Open the project.
 2. Run the command npm install on terminal
 3. Run the json-server script inside package.json file
-4. Run the command npm run start on terminal
-5. Enter the localhost port suggested on terminal
-
+4. Run the command ng server --o on terminal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 
