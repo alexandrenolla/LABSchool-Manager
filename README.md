@@ -4,11 +4,12 @@ Front-end for the educational management system, in which teachers and educators
 Functionalities: Registration and querying of students and/or educational sessions, as well as the editing of records. Validation of all form fields and user authentication through a login and password system.
 
 # How to run the project:
-0. You got to have Node and Angular Cli installed.
-1. Open the project.
-2. Run the command npm install on terminal
-3. Run the json-server script inside package.json file
-4. Run the command ng server --o on terminal
+
+First, install 'Node.js' on your computer.
+Once installed, open the project in your editor and run the command 'npm install' in your terminal. This will install all the necessary dependencies for the project to run.
+Next, still in your terminal, enter the command 'ng serve'.
+Within the project files, access 'package.json', go to 'scripts', hover over 'server', and click on the 'Run script' option that appears.
+Then, navigate to: 'http://localhost:4200/'.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 
